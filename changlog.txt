@@ -1,0 +1,7 @@
+This file containes dated notes based on code changes, testing and learnings throughout this project.
+
+Thursday, March 27:
+    Began work, have never coded in python before so researching sockets at: https://docs.python.org/3.13/library/socket.html
+
+    1. Created server socket using AF_INET family, and SOCK_STREAM type. This socket was bound to proxyHost and proxyPort IP and port number. The listen function is then used to begin listening on that socket.
+    
