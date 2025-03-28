@@ -4,4 +4,10 @@ Thursday, March 27:
     Began work, have never coded in python before so researching sockets at: https://docs.python.org/3.13/library/socket.html
 
     1. Created server socket using AF_INET family, and SOCK_STREAM type. This socket was bound to proxyHost and proxyPort IP and port number. The listen function is then used to begin listening on that socket.
+    2. Added code to accept a connection from a client, and recieve a message. Tested this using telnet, along with the example request below and it seems to function correctly. Also updated comments explaining how functions work.
+        GET /questions HTTP/1.0
+        Host: stackoverflow.com
     
+
+    3. 
+
