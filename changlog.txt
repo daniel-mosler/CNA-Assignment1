@@ -5,9 +5,15 @@ Thursday, March 27:
 
     1. Created server socket using AF_INET family, and SOCK_STREAM type. This socket was bound to proxyHost and proxyPort IP and port number. The listen function is then used to begin listening on that socket.
     2. Added code to accept a connection from a client, and recieve a message. Tested this using telnet, along with the example request below and it seems to function correctly. Also updated comments explaining how functions work.
-        GET /questions HTTP/1.0
-        Host: stackoverflow.com
-    
+GET /questions HTTP/1.0
+Host: stackoverflow.com
 
-    3. 
+Saturday, March 29:
+    1. Implemented code to handle cacheData in the event of a cache hit. lists are converted to strings in order to ensure compatibility with skeleton code.
+    2. Implemented originServerSocket functionality. The socket connects to the address obtained from hostname on port 80.
+    3. Leveraged the split function to assign the appropriate data from message into the origin server requests and headers. These variables are converted to strings for the same reason as above.
+    4. The server can receieve a message from the origin server, and store it in the receivedMessage variable before writing it to the cacheFile
+
+    As of this stage, I have connected to the proxy server, obtained a remote homepage, read from a cached file, and redownloaded data from origin when removed from cache.
+
 
