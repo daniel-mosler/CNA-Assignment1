@@ -159,16 +159,17 @@ while True:
       # originServerRequest is the first line in the request and
       # originServerRequestHeader is the second line in the request
       # ~~~~ INSERT CODE ~~~~
+      
       lines = message.split("\r\n")
-      originServerRequest = lines[0]
-      originServerRequestHeader = lines[1:]
+      originServerRequest = method + ' ' + resource + ' ' + version
+      originServerRequestHeader = 'Host: ' + hostname + '\r\n' + '\r\n'.join(lines[2:])
       ## Convert request data to string
-      originServerRequest = ''.join(originServerRequest)
-      originServerRequestHeader = '\n'.join(originServerRequestHeader)
+      #originServerRequest = ''.join(originServerRequest)
+      #originServerRequestHeader = ''.join(originServerRequestHeader)
       # ~~~~ END CODE INSERT ~~~~
 
       # Construct the request to send to the origin server
-      request = originServerRequest + '\r\n' + originServerRequestHeader + '\r\n\r\n'
+      request = originServerRequest + '\r\n' + originServerRequestHeader
 
       # Request the web resource from origin server
       print ('Forwarding request to origin server:')
@@ -186,6 +187,7 @@ while True:
       # Get the response from the origin server
       # ~~~~ INSERT CODE ~~~~
       recievedMessage = originServerSocket.recv(1024)
+      print (recievedMessage)
       # ~~~~ END CODE INSERT ~~~~
 
       # Send the response to the client

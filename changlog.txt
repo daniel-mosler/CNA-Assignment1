@@ -16,4 +16,5 @@ Saturday, March 29:
 
     As of this stage, I have connected to the proxy server, obtained a remote homepage, read from a cached file, and redownloaded data from origin when removed from cache.
 
-
+Monday, March 31:
+    1. Updated request message construction for request sent to origin server. The requests are now valid (they were incorrect in previous version and resulted in a 404 NOT FOUND response in all cases), and the correct responses are received and cached.
